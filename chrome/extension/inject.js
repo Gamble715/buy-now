@@ -12,5 +12,8 @@ $(document).ready(() => {
   for (let i = 0; i < links.length; i += 1) {
     permalinks.push(links[i].href);
   }
-  chrome.runtime.sendMessage({ permalinks });
+
+  if (permalinks.length > 0) {
+    chrome.runtime.sendMessage({ permalinks });
+  }
 });
