@@ -2,11 +2,11 @@ function saveState(state) {
   chrome.storage.local.set({ state: JSON.stringify(state) });
 }
 
-// todos unmarked count
-function setBadge(todos) {
+// products unmarked count
+function setBadge(products) {
   if (chrome.browserAction) {
-    const count = todos.filter(todo => !todo.marked).length;
-    chrome.browserAction.setBadgeText({ text: count > 0 ? count.toString() : '' });
+    const count = products.data.length;
+    chrome.browserAction.setBadgeText({ text: count > 0 ? count.toString() : '0' });
   }
 }
 
@@ -16,7 +16,7 @@ export default function () {
     store.subscribe(() => {
       const state = store.getState();
       saveState(state);
-      setBadge(state.todos);
+      setBadge(state.products);
     });
     return store;
   };
