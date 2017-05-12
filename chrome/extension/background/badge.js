@@ -2,7 +2,7 @@ chrome.storage.local.get('products', (obj) => {
   let products = obj.products;
   if (products) {
     products = JSON.parse(products);
-    const len = products.filter(product => !product.marked).length;
+    const len = products.length;
     if (len > 0) {
       chrome.browserAction.setBadgeText({ text: len.toString() });
     }
