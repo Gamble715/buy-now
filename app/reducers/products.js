@@ -4,12 +4,14 @@ const initialState = [{}];
 
 const actionsMap = {
   [ActionTypes.PRODUCT_SUCCESS](state, action) {
+    console.log('DATA',action.data.body);
     return action.data.body;
   },
   [ActionTypes.GET_PRODUCT](state) {
     return state;
   },
   [ActionTypes.PRODUCT_HAS_ERRORED](state) {
+    console.log('ERROR');
     return state;
   },
 };

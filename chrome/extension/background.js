@@ -22,14 +22,9 @@ chrome.runtime.onMessage.addListener((request) => {
 });
 
 chrome.webRequest.onCompleted.addListener((details) => {
-  const urlArray = details.url.split('/');
-  urlArray.splice(-2, 2);
-  if (urlArray.join('/') === 'https://www.instagram.com/p') {
-    store.dispatch(getProducts(details.url));
-  } else {
-    console.log('NON IMAGE PAGE', details);
-  }
-}, { urls: ['https://www.instagram.com/p/*', 'https://www.instagram.com/query/'] }, ['responseHeaders']);
+  console.log('DETAILS', details);
+  store.dispatch(getProducts(details.url));
+}, { urls: ['https://www.instagram.com/p/*', 'https://www.pinterest.com/pin/*'] });
 
 function promisifier(method) {
   // return a function

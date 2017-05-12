@@ -16,11 +16,11 @@
     "inject.html"
   ],
   "externally_connectable": {
-    "matches": ["https://www.instagram.com/*"]
+    "matches": ["https://www.instagram.com/*", "https://www.pinterest.com/*"]
   },
   "background": {
     "page": "background.html"
   },
-  "permissions": [ "contextMenus", "management", "tabs", "storage", "webRequest", "https://www.instagram.com/*", "https://github.com/*", "https://l4flre33of.execute-api.us-east-1.amazonaws.com/*" ],
-  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://instagram.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://l4flre33of.execute-api.us-east-1.amazonaws.com; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' http://s7d2.scene7.com http://scontent.cdninstagram.com; font-src https://maxcdn.bootstrapcdn.com;"
+  "permissions": [ "contextMenus", "management", "tabs", "storage", "webRequest", "https://www.instagram.com/*", "https://github.com/*", "https://l4flre33of.execute-api.us-east-1.amazonaws.com/*", "https://www.pinterest.com/*" ],
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://instagram.com https://pinterest.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://l4flre33of.execute-api.us-east-1.amazonaws.com; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' http://s7d2.scene7.com http://scontent.cdninstagram.com https://s-media-cache-ak0.pinimg.com http://www.kraususa.com/; font-src https://maxcdn.bootstrapcdn.com;"
 }
