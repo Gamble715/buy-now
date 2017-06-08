@@ -49,7 +49,6 @@ export default class App extends Component {
         fontWeight: 500,
         cursor: 'pointer'
       };
-      console.log(products);
       return products.data.map(product => (
         <div key={product.productId} style={{ width: '100%' }}>
           <div style={{ width: '40%', float: 'left' }}>
