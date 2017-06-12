@@ -11,15 +11,15 @@ const store = createStore({});
 
 wrapStore(store, { portName: 'BUY_NOW' });
 
-chrome.runtime.onMessage.addListener((request) => {
-  // TODO perhaps iterate here and call the actions individually?
-  console.log('LINKS', request.permalinks);
-  const links = request.permalinks;
-  for (let i = 0; i < links.length; i += 1) {
-    console.log('SEARCHING FOR CONTENT');
-    store.dispatch(getProducts(links[i]));
-  }
-});
+// chrome.runtime.onMessage.addListener((request) => {
+//   // TODO perhaps iterate here and call the actions individually?
+//   console.log('LINKS', request.permalinks);
+//   const links = request.permalinks;
+//   for (let i = 0; i < links.length; i += 1) {
+//     console.log('SEARCHING FOR CONTENT');
+//     store.dispatch(getProducts(links[i]));
+//   }
+// });
 
 chrome.webRequest.onCompleted.addListener((details) => {
   console.log('DETAILS', details);

@@ -13,7 +13,8 @@ $(document).ready(() => {
     permalinks.push(links[i].href);
   }
 
+  console.log('LINKS', permalinks);
   if (permalinks.length > 0) {
-    chrome.runtime.sendMessage({ permalinks });
+    // chrome.runtime.sendMessage({ permalinks });
   }
 });
